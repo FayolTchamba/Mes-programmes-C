@@ -5,7 +5,7 @@ void InverseTableau(int Te[], int Ts[])
      int i;
      for(i = 0; i < 10; i++)
      {
-          Te[10 - i] = Ts[i];
+        Ts[i] = Te[10 - i];
      }
 
 }
@@ -15,7 +15,7 @@ int main()
      printf("Entrez les 10 elements du tableau : \n");
      for(i = 0; i < 10; i++)
      {
-        Te[i] = scanf("%d", &Te[i]);
+        scanf("%d", &Te[i]);
      }
      InverseTableau(Te, Ts);
      printf("Tableau initial : \n");
