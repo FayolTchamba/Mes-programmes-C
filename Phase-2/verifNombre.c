@@ -3,8 +3,8 @@
 
 int VerifNombre(int tableau[], int nombre)
 {
-     int i, val ;
-     for(i=0; i < 15; i++)
+     int i, val, taille ;
+     for(i=0; i < taille; i++)
      {
           if(tableau[i] == nombre)
           {
@@ -22,10 +22,12 @@ int VerifNombre(int tableau[], int nombre)
 
 int main()
 {
-     int i, nombre = 0, val, tableau[15] = {0};
+     int i, nombre = 0, val, taille = 0, tableau[15] = {0};
 
-    printf("Entrez les 15 elements du tableau :\n");
-    for(i = 0; i < 15; i++)
+    printf("Entrez la taille du tableau : \n");
+    scanf("%d", &taille);
+    printf("Entrez les %d elements du tableau :\n",taille);
+    for(i = 0; i < taille; i++)
     {
          scanf("%d", &tableau[i]);
     }
