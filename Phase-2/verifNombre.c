@@ -31,6 +31,6 @@ int main()
     }
     printf("Entrez le nombre a rechercher : \n");
     scanf("%d", &nombre);
-    val = VerifNombre(tableau, nombre);
+    VerifNombre(tableau, nombre);
     return 0;
 }
