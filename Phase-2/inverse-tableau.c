@@ -1,31 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
-void InverseTableau(int Te[], int Ts[])
+int InverseTableau(int Te[])
 {
-     int i;
-     for(i = 0; i < 10; i++)
+     int i, taille;
+     int* Ts[i];
+     for(i = 0; i < taille; i++)
      {
-        Ts[i] = Te[10 - i];
+        Ts[i] = Te[taille - i];
      }
+
+     return *Ts[i];
 
 }
 int main()
 {
-     int i, Te[10] = {0}, Ts[10] = {0};
+     int i, taille = 10, Te[10] = {0}, Ts[10] = {0};
      printf("Entrez les 10 elements du tableau : \n");
-     for(i = 0; i < 10; i++)
+     for(i = 0; i < taille; i++)
      {
         scanf("%d", &Te[i]);
      }
-     InverseTableau(Te, Ts);
      printf("Tableau initial : \n");
-     for(i = 0; i < 10; i++)
+
+     for(i = 0; i < taille; i++)
      {
           printf("%d\n", Te[i]);
      }
      printf("Tableau inverse : \n");
-     for(i = 0; i < 10; i++)
+
+     for(i = 0; i < taille; i++)
      {
+       InverseTableau(Te);
        printf("%d\n", Ts[i]);
      }
     return 0;

@@ -4,7 +4,7 @@
 int VerifNombre(int tableau[], int nombre)
 {
      int i, val, taille ;
-     for(i=0; i < taille; i++)
+     for(i = 0; i < taille; i++)
      {
           if(tableau[i] == nombre)
           {
