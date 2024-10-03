@@ -16,8 +16,10 @@ int maxmin(int T[])
           }
 
      }
+          int* Ts[2] = {max, min};
 
-     return max;
+
+          return *Ts;
 }
 
 
@@ -35,10 +37,10 @@ int main()
      {
           printf("%d\n",T[i]);
      }
-     maxmin(T);
-     printf("Le maximum du tableau est : \t", max);
 
-     printf("Le minimum du tableau est : \t", min);
+     printf("Le maximum et le minimum du tableau sont respectivement : %d et %d \t", maxmin(T));
+
+
 
      return 0;
 }
