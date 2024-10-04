@@ -1,46 +1,55 @@
 #include <stdio.h>
 #include <stdlib.h>
+struct Resultat {
+    int max;
+    int min;
+};
 
-int maxmin(int T[])
+
+struct Resultat maxmin(int tableau[], int taille)
 {
-     int i, max = 0, min = 1, taille;
-     for (i = 0; i < taille; i++)
-     {
-          if (T[i] > max)
-          {
-               max = T[i];
-          }
-          if (T[i] < min)
-          {
-               min = T[i];
-          }
-
-     }
-          int* Ts[2] = {max, min};
+    struct Resultat resultat;
+    resultat.max = tableau[0];
+    resultat.min = tableau[0];
 
 
-          return *Ts;
+    for (int i = 1; i < taille; i++)
+    {
+        if (tableau[i] > resultat.max)
+        {
+             resultat.max = tableau[i];
+        }
+        if (tableau[i] < resultat.min)
+        {
+             resultat.min = tableau[i];
+        }
+    }
+
+    return resultat;  // Retourner la structure contenant max et min
 }
-
 
 int main()
 {
-     int i, taille = 10, max, min, T[10] = {0};
-     printf("Entrez les 10 elements du tableau : \n");
-     for (i = 0; i < taille; i++)
+     int tableau[10];
+
+     printf("Veuillez entrer 10 entiers :\n");
+     for (int i = 0; i < 10; i++)
      {
-          scanf("%d",&T[i]);
+          scanf("%d", &tableau[i]);
      }
 
-     printf("Tableau initial : \n");
-     for (i = 0; i < taille; i++)
-     {
-          printf("%d\n",T[i]);
-     }
 
-     printf("Le maximum et le minimum du tableau sont respectivement : %d et %d \t", maxmin(T));
+    struct Resultat resultat = maxmin(tableau, 10);
 
 
+    printf("Le tableau saisi est : \n");
+    for (int i = 0; i < 10; i++)
+    {
+         printf("%d\n", tableau[i]);
+    }
 
-     return 0;
+    printf("\nLe maximum est : %d", resultat.max);
+    printf(" \nLe minimum est : %d\n", resultat.min);
+
+    return 0;
 }
