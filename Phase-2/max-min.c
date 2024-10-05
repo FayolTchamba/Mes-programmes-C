@@ -25,7 +25,7 @@ struct Resultat maxmin(int tableau[], int taille)
         }
     }
 
-    return resultat;  // Retourner la structure contenant max et min
+    return resultat;
 }
 
 int main()

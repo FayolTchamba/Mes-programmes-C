@@ -9,6 +9,9 @@ Bienveune dans ce repertoire. Il présente 03 programmes en langage C que nous d
  
  
  
- * verifNombre.c : 
+ * verifNombre.c :
+  
+ 
+ * tritableau.c :
 
 
