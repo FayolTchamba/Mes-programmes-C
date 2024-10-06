@@ -9,7 +9,7 @@ Bienveune dans ce repertoire. Il présente 03 programmes en langage C que nous d
  
  
  
- * verifNombre.c :  Ce programme demande à l'utilisateur d'entrer les elements pour creer un tableau de 15 elements ensuite d'entrer l'element a rechercher. Enfin le programme affiche True si le nombre est dans le tableau et False sinon.
+ * verifNombre.c :  Ce programme demande à l'utilisateur d'entrer les elements pour creer un tableau et d'entrer l'element à rechercher. Le programme affiche True si le nombre est present dans le tableau et False sinon.
   
  
  * tritableau.c : Ce programme demande à l'utilisateur d'entrer les elements pour creer un tableau de 12 elements, il trie ces éléments par ordre alphabétique, et enfin il affiche le tableau initial et le tableau trié.

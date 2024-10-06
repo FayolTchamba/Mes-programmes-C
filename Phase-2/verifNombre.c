@@ -1,38 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
-int VerifNombre(int tableau[], int nombre)
+bool VerifNombre(int tableau[], int nombre)
 {
-     int i, val, taille ;
+     int i, taille;
      for(i = 0; i < taille; i++)
      {
           if(tableau[i] == nombre)
           {
-               val = 1;
+               return true;
           }
-          else
-          {
-               val = 0;
-          }
-     }
 
-     return val;
+     }
+     return false;
 }
 
 
 int main()
 {
-     int i, nombre = 0, val, taille = 0, tableau[15] = {0};
+     int i, nombre, taille = 5, tableau[5];
 
-    printf("Entrez la taille du tableau : \n");
-    scanf("%d", &taille);
-    printf("Entrez les %d elements du tableau :\n",taille);
+    printf("Entrez les 05 elements du tableau :\n");
     for(i = 0; i < taille; i++)
     {
          scanf("%d", &tableau[i]);
     }
     printf("Entrez le nombre a rechercher : \n");
     scanf("%d", &nombre);
-    VerifNombre(tableau, nombre);
+    if(VerifNombre(tableau, nombre))
+    {
+         printf("true\n");
+    }
+    else
+    {
+         printf("false\n");
+    }
+
     return 0;
 }
