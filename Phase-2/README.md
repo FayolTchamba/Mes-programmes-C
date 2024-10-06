@@ -16,4 +16,7 @@ Bienveune dans ce repertoire. Il présente 03 programmes en langage C que nous d
 
 
  * frequence.c :   Ce programme compte le nombre de fois qu'un certain entier apparaît dans un tableau de 20 entiers. L'utilisateur rempli un tableau de 20 entiers ; ensuite il entre un element dont il veut calculer la frequence (les occurences) ; le programme affiche le tableau des 20 elements, le nombre choisi et sa frequence d'apparition.
+ 
+ 
+ * frequence2.c :  Ce programme fonctionne presque comme le précedent. À la seule différence que l'utilisateur rempli un tableau de 20 entiers, et le programme retourne la fréquence d'apparition de chacun des nombres entrés. D'ou la quasi ressemble du nom du fichier.
 
