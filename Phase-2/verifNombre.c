@@ -19,7 +19,7 @@ bool VerifNombre(int tableau[], int nombre)
 
 int main()
 {
-     int i, nombre, taille = 5, tableau[5];
+     int i, nombre, taille = 15, tableau[15];
 
     printf("Entrez les 05 elements du tableau :\n");
     for(i = 0; i < taille; i++)
