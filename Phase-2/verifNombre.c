@@ -21,7 +21,7 @@ int main()
 {
      int i, nombre, taille = 15, tableau[15];
 
-    printf("Entrez les 05 elements du tableau :\n");
+    printf("Entrez les 15 elements du tableau :\n");
     for(i = 0; i < taille; i++)
     {
          scanf("%d", &tableau[i]);
