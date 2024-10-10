@@ -20,6 +20,7 @@ void compter_occurrences(int tableau[], int taille)
           if (deja_compte[i])
           {
                continue;
+              
           }
 
          int compteur = 1;

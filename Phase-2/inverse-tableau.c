@@ -14,7 +14,7 @@ int InverseTableau(int Te[])
 }
 int main()
 {
-     int i, taille = 10, Te[10] = {0}, Ts[10] = {0};
+     int i, taille = 10, Te[taille] = {0}, Ts[taille] = {0};
      printf("Entrez les 10 elements du tableau : \n");
      for(i = 0; i < taille; i++)
      {

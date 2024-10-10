@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+#define TAILLE 15
+
 bool VerifNombre(int tableau[], int nombre)
 {
-     int i, taille;
-     for(i = 0; i < taille; i++)
+     int i;
+     for(i = 0; i < TAILLE; i++)
      {
           if(tableau[i] == nombre)
           {
@@ -19,23 +21,23 @@ bool VerifNombre(int tableau[], int nombre)
 
 int main()
 {
-     int i, nombre, taille = 15, tableau[15];
+     int i, nombre, tableau[TAILLE];
 
-    printf("Entrez les 15 elements du tableau :\n");
-    for(i = 0; i < taille; i++)
-    {
-         scanf("%d", &tableau[i]);
-    }
-    printf("Entrez le nombre a rechercher : \n");
-    scanf("%d", &nombre);
-    if(VerifNombre(tableau, nombre))
-    {
-         printf("true\n");
-    }
-    else
-    {
-         printf("false\n");
-    }
+     printf("Entrez les 15 elements du tableau :\n");
+     for(i = 0; i < TAILLE; i++)
+     {
+          scanf("%d", &tableau[i]);
+     }
+     printf("Entrez le nombre a rechercher : \n");
+     scanf("%d", &nombre);
+     if(VerifNombre(tableau, nombre))
+     {
+          printf("true\n");
+     }
+     else
+     {
+          printf("false\n");
+     }
 
-    return 0;
+     return 0;
 }
