@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n, i, s = 0;
+    printf("Entrez la taille du tableau que vous souhaitez créer :\n");
+    scanf("%d", &n);
+
+    // Allocation dynamique du tableau
+    int *T = malloc(n * sizeof(int));
+    if (T == NULL)
+    {
+        printf("Erreur d'allocation de mémoire.\n");
+        return 1;
+    }
+    printf("Entrez le 1er element du tableau : \n");
+    scanf("%d", &T[0]);
+    int temp;
+    printf("Entrez les autres elements : \n");
+
+    for (i = 1; i < n - 1; i++)
+    {
+        scanf("%d", &temp);
+
+        while (temp <= T[0])
+        {
+            printf("Le premier element doit etre le plus petit que tous les autres.\n");
+            printf("Veuillez ressaisir le nombre :\n");
+            scanf("%d", &temp);
+        }
+
+
+        while (temp == T[i - 1])
+        {
+            printf("Deux elements consecutifs ne doivent pas avoir la meme valeur.\n");
+            printf("Veuillez ressaisir le nombre :\n");
+            scanf("%d", &temp);
+        }
+
+        T[i] = temp;
+    }
+    for (i = 1; i < n - 1; i++)
+    {
+        s = s + T[i];
+    }
+
+    printf("Entrez le dernier élément :\n");
+    scanf("%d", &T[n - 1]);
+
+
+    while (T[n - 1] != s)
+    {
+        printf("Erreur : Le dernier élément doit être égal à la somme du 2eme au %deme element.\n",n-1);
+        printf("Veuillez ressaisir le dernier element :\n");
+        scanf("%d", &T[n - 1]);
+    }
+
+    printf("\nTableau final :\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d\n", T[i]);
+    }
+
+
+    free(T);
+    return 0;
+}
