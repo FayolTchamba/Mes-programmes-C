@@ -18,12 +18,16 @@ int main()
     scanf("%d", &T[0]);
     int temp;
     printf("Entrez les autres elements : \n");
-    for (i = 1; i < n - 1; i++)
+   for (i = 1; i < n; i++)
     {   
-        if (i % 2 == 0)
+        /*printf("--%d",i);
+        
+        if (i % 2 != 0)
         {
+            
             int temp;
-            printf("Entrez un multiple de 2 superireur a %d pour cet element de rang %d :\n",T[0],i);
+            
+            printf("Entrez un multiple de 2 superieur a %d pour cet element de rang %d :\n",T[0],i+1);
             scanf("%d", &temp);
             while(temp <= T[0])
             {
@@ -33,7 +37,7 @@ int main()
             }
             while(temp % 2 != 0)
             {
-                printf("Erreur : Veuillez entrer un multiple de 2 pour cette %deme position :\n",i);
+                printf("Erreur : Veuillez entrer un multiple de 2 pour cette %deme position :\n",i+1);
                 scanf("%d", &temp);
             }
             while (temp == T[i - 1])
@@ -44,9 +48,11 @@ int main()
             }
             T[i] = temp;
         }
-        scanf("%d", &temp);
-
-
+        else
+        {*/
+                scanf("%d", &temp);
+        
+        
         while (temp <= T[0])
         {
             printf("Le premier element doit etre le plus petit que tous les autres.\n");
@@ -66,7 +72,7 @@ int main()
         s = s + T[i];
     }
 
-    printf("Entrez le dernier élément :\n");
+    printf("%d Entrez le dernier élément :\n",s);
     scanf("%d", &T[n - 1]);
 
 
