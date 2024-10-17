@@ -4,7 +4,7 @@
 int main()
 {
     int i, a, b, temp, T[10] = {0};
-    printf("Entrez les elemets pour creer un tableau de 10 elements :\n");
+    printf("Entrez les elements pour creer un tableau de 10 elements :\n");
     for(i = 0; i < 10; i++)
     {
         scanf("%d", &T[i]);
@@ -17,11 +17,11 @@ int main()
 
     for(i = 0; i < 10; i++)
     {
-        while(T[i] % 2 == 0)
+        if(T[i] % 2 == 0)
         {
             a = T[i];
         }
-        while(T[i] % 2 != 0)
+        if(T[i] % 2 != 0)
         {
             b = T[i];
         }
@@ -34,7 +34,7 @@ int main()
     printf("Tableau final : \n");
     for(i = 0; i < 10; i++)
     {
-        printf("%d", T[i]);
+        printf("%d\n", T[i]);
     }
 
 
