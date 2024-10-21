@@ -24,12 +24,14 @@ int main()
             printf("Entrez l'élément %d : ", i + 1);
             scanf("%d", &temp);
 
-            if (temp <= tableau[0]) {
+            if (temp <= tableau[0]) 
+            {
                 printf("Erreur : L'élément doit être supérieur au premier (%d).\n", tableau[0]);
                 continue;
             }
             
-            if (temp == tableau[i - 1]) {
+            if (temp == tableau[i - 1]) 
+            {
                 printf("Erreur : Deux éléments consécutifs ne peuvent pas être égaux.\n");
                 continue;
             }
