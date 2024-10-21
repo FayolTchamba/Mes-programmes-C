@@ -2,90 +2,87 @@
 #include <stdlib.h>
 
 int main()
-{   
-    int n, i, s = 0, temp;
-    printf("Entrez la taille du tableau que vous souhaitez creer :\n");
+{
+    int n;
+   printf("Entrez la taille du tableau :\n");
     scanf("%d", &n);
 
-    // Allocation dynamique du tableau
-    int *T = malloc(n * sizeof(int));
-    if (T == NULL)
+    int tableau[n];
+    printf("Entrez le premier élément : ");
+    scanf("%d", &tableau[0]);
+
+    int somme = 0; 
+    int contient_n = (tableau[0] == n) ? 1 : 0;
+
+    for (int i = 1; i < n - 1; i++) 
     {
-        printf("Erreur d'allocation de memoire.\n");
+        int temp;
+        int valide = 0;
+
+        while (!valide) 
+        {
+            printf("Entrez l'élément %d : ", i + 1);
+            scanf("%d", &temp);
+
+            if (temp <= tableau[0]) {
+                printf("Erreur : L'élément doit être supérieur au premier (%d).\n", tableau[0]);
+                continue;
+            }
+            
+            if (temp == tableau[i - 1]) {
+                printf("Erreur : Deux éléments consécutifs ne peuvent pas être égaux.\n");
+                continue;
+            }
+
+            if (i % 2 == 1 && temp % 2 != 0) 
+            { 
+                printf("Erreur : Les éléments de rang pair doivent être des multiples de 2.\n");
+                continue;
+            }
+
+            
+            tableau[i] = temp;
+            somme = somme + temp; 
+            if (temp == n) 
+            {
+                contient_n = 1;
+            }
+            valide = 1;
+        }
+    }
+
+    
+    if (!contient_n) 
+    {
+        printf("Erreur : Il doit y avoir au moins un élément égal à n dans le tableau.\n");
         return 1;
     }
-    printf("Entrez les elements du tableau : \n");
-    for(i = 0; i < n; i++)
-    {
-        scanf("%d", &temp);
-        
-        if (i % 2 != 0)
+
+    
+    int dernier = 0;
+    /*while (!dernier) 
+    {*/
+        printf("Entrez le dernier élément  : ");
+        scanf("%d", &tableau[n - 1]);
+
+       
+        if (tableau[n - 1] != somme)
         {
-            
-            while(temp % 2 != 0)
-            {
-                printf("Erreur : Veuillez entrer un multiple de 2 pour cette %deme position :\n",i);
-                scanf("%d", &temp);
-            }
-            T[i] = temp;
-            while(temp <= T[0])
-            {
-                printf("Le premier element doit etre plus petit que tous les autres.\n");
-                printf("Veuillez ressaisir le nombre :\n");
-                scanf("%d", &temp);
-            }
-            T[i] = temp;
-            while (temp == T[i - 1])
-            {
-                printf("Deux elements consecutifs ne doivent pas avoir la meme valeur.\n");
-                printf("Veuillez ressaisir le nombre :\n");
-                scanf("%d", &temp);
-            }
-            T[i] = temp;
-     
-        }   
-        else
-        {
-            while (temp <= T[0])
-            {
-                printf("Le premier element doit etre plus petit que tous les autres.\n");
-                printf("Veuillez ressaisir le nombre :\n");
-                scanf("%d", &temp);
-            }
-            T[i] = temp;
-        
-            while (temp == T[i - 1])
-            {  
-                printf("Deux elements consecutifs ne doivent pas avoir la meme valeur.\n");
-                printf("Veuillez ressaisir le nombre :\n");
-                scanf("%d", &temp);
-            }
-            T[i] = temp;
-        }
-        for (i = 1; i < n - 1; i++)
-        {
-            s = s + T[i];
+            printf("Erreur : Le dernier élément doit être égal à la somme des éléments du 2ème au %dème.\n", n - 1);
         } 
-
-        printf("Entrez le dernier element :\n");
-        scanf("%d", &T[n - 1]);
-
-
-        while (T[n - 1] != s)
+        /*else 
         {
-            printf("Erreur : Le dernier element doit etre egal a la somme du 2eme au %deme element.\n",n-1);
-            printf("Veuillez ressaisir le dernier element :\n");
-            scanf("%d", &T[n - 1]);
-        }
-
-
-        printf("\nTableau final :\n");
-        for (i = 0; i < n; i++)
-        {
-            printf("%d\n", T[i]);
-        }
-
+            dernier = 1;
+        }*/
+   /* }*/
+     
+    printf("Tableau final :\n");
+    for (int i = 0; i < n; i++) 
+    {
+        printf("%d\n", tableau[i]);
     }
-        free(T);
-        return 0;
-}   
+    printf("\n");
+
+    return 0;
+}
+
