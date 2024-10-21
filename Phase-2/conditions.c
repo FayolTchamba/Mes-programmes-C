@@ -60,8 +60,7 @@ int main()
 
     
     int dernier = 0;
-    /*while (!dernier) 
-    {*/
+    
         printf("Entrez le dernier élément  : ");
         scanf("%d", &tableau[n - 1]);
 
@@ -70,12 +69,7 @@ int main()
         {
             printf("Erreur : Le dernier élément doit être égal à la somme des éléments du 2ème au %dème.\n", n - 1);
         } 
-        /*else 
-        {
-            dernier = 1;
-        }*/
-   /* }*/
-     
+  
     printf("Tableau final :\n");
     for (int i = 0; i < n; i++) 
     {
