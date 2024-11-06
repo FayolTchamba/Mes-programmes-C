@@ -3,7 +3,7 @@
 
 int main()
 {
-    int n;
+    int n, i, contient_n = 0;
    printf("Entrez la taille du tableau :\n");
     scanf("%d", &n);
 
@@ -12,8 +12,7 @@ int main()
     scanf("%d", &tableau[0]);
 
     int somme = 0; 
-    int contient_n = (tableau[0] == n) ? 1 : 0;
-
+   
     for (int i = 1; i < n - 1; i++) 
     {
         int temp;
@@ -23,6 +22,14 @@ int main()
         {
             printf("Entrez l'élément %d : ", i + 1);
             scanf("%d", &temp);
+             
+             
+                 if (temp == n) 
+                 {
+                     contient_n = 1;
+                    
+                 }
+            
 
             if (temp <= tableau[0]) 
             {
@@ -45,7 +52,7 @@ int main()
             
             tableau[i] = temp;
              
-             while (!contient_n && i == n-2) 
+             while (contient_n != 1 && i == n-2) 
              {
                  printf("Erreur : Il doit y avoir au moins un élément égal à n dans le tableau.\n");
                  printf("Entrez l'élément %d : ",n-1);
@@ -74,7 +81,7 @@ int main()
     
     int dernier = 0;
     
-        printf("Entrez le dernier élément  : ");
+        printf("Entrez le dernier élément : ");
         scanf("%d", &tableau[n - 1]);
 
        
